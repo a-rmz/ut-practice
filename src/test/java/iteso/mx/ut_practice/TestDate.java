@@ -39,7 +39,7 @@ public class TestDate {
         dateCalculator.setDate("33/10/1996");
         Assert.assertEquals(
                 dateCalculator.calculateAge(),
-                "Please enter a date with a valid format"
+                "Please enter a valid day"
         );
     }
 
@@ -48,13 +48,13 @@ public class TestDate {
         dateCalculator.setDate("02/15/1996");
         Assert.assertEquals(
                 dateCalculator.calculateAge(),
-                "Please enter a date with a valid format"
+                "Please enter a valid month"
         );
     }
 
     @Test
     public void invalidYear() {
-        dateCalculator.setDate("02/10/19");
+        dateCalculator.setDate("02/10/ABCD");
         Assert.assertEquals(
                 dateCalculator.calculateAge(),
                 "Please enter a date with a valid format"
@@ -66,7 +66,7 @@ public class TestDate {
         dateCalculator.setDate("02/10/2096");
         Assert.assertEquals(
                 dateCalculator.calculateAge(),
-                "Please enter a date with a valid format"
+                "Please enter a past date"
         );
     }
 
